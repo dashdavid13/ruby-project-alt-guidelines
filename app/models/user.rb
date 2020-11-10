@@ -1,5 +1,67 @@
 class User < ActiveRecord::Base
     has_many :jets
     has_many :games, through: :jets 
+    @@prompt = TTY::Prompt.new
+
+    def self.login
+        username = @@prompt.ask("Please enter your name:")
+        if self.find_by(username: username)
+            self.find_by(username: username).password_check
+        else
+            self.user_dne
+        end
+    end
+
+    def password_check
+        password = @@prompt.mask("Please enter your password:")
+        if self.password == password
+            self
+        else
+            puts "/nWe're sorry, that password is incorrect."
+            sleep(2)
+            CLI.title_screen 
+        end
+    end
+
+    def self.new_user 
+        username = @@prompt.ask("Enter your name:")
+        password = @@prompt.mask("Enter a password:")
+        confirm_password = @@prompt.mask("Confirm your password:")
+        if password != confirm_password
+            puts "Passwords do not match. Re-enter your information."
+            self.new_user
+        else
+            user_hold = self.create(username: username, password: password)
+            CLI.username=(user_hold)
+            puts "\n #{username} has been created."
+            sleep(1)
+        end 
+        CLI.game_menu
+    end
+
+    def self.delete_user
+        username = @@prompt.ask("Which user do you want to delete?")
+        if self.find_by(username: username) 
+            user = self.find_by(username: username).password_check
+            if user
+                # binding.pry
+                User.destroy(user.id)
+                puts "\nYou are destroyed."
+                sleep(2)
+                CLI.title_screen
+            else
+                CLI.title_screen
+            end
+        else
+            self.user_dne
+        end
+    end
+
+
+    def self.user_dne
+        puts "\nUser does not exist."
+        sleep(2)
+        CLI.title_screen    
+    end 
 
 end 

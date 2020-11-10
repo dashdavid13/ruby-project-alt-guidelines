@@ -14,10 +14,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "games", force: :cascade do |t|
     t.text "game_intro"
-    t.integer "hits"
     t.integer "opener_id"
-    t.integer "extra_shooting_speed"
-    t.integer "three_extra_hp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,7 +22,6 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "jets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
-    t.integer "super_ball_id"
     t.integer "user_health"
     t.integer "user_score"
     t.string "country_color"
@@ -36,7 +32,6 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.integer "high_score"
     t.string "country"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -17,6 +17,7 @@ class HeroesOfTheSky < Gosu::Window
     
     @star_anim = Gosu::Image.load_tiles("media/star.png", 25, 25)
     @stars = Array.new
+    @font = Gosu::Font.new(20)
   end
   
 
@@ -43,15 +44,15 @@ class HeroesOfTheSky < Gosu::Window
     end
         @player.move
         @player_two.move
-      something1 =  @player.collect_stars(@stars)
-       something2 =  @player_two.collect_stars(@stars)
-       puts
-       if !something1 
-         p @player.jet
-       else
-        puts "no stars collected. you lose. "
-       end
-       binding.pry
+        something1 =  @player.collect_stars(@stars)
+        something2 =  @player_two.collect_stars(@stars)
+      # puts
+      #  if !something1 
+      #    p @player.jet
+      #  else
+      #   puts "no stars collected. you lose. "
+      #  end
+       #binding.pry
     if rand(100) < 4 and @stars.size < 25
       @stars.push(Star.new(@star_anim))
       end
@@ -62,6 +63,8 @@ class HeroesOfTheSky < Gosu::Window
         @player.draw
         @player_two.draw
         @stars.each { |star| star.draw }
+        @font.draw_text("Player One Score: #{@player.score}",10,10,ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
+        @font.draw_text("Player Two Score: #{@player_two.score}",10,50,ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
     end
 
    
