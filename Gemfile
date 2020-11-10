@@ -7,3 +7,8 @@ gem "sqlite3", '~> 1.3.6'
 gem "pry"
 gem "require_all"
 gem "faker"
+gem "ruby2d"
+gem "rake"
+gem "tty-font"
+gem "tty-prompt"
+gem "pastel"
