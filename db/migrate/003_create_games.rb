@@ -1,4 +1,4 @@
-class CreateGames < ActiveRecord::Migration[6.0]
+class CreateGames < ActiveRecord::Migration[4.2]
     def change
       create_table :games do |t|
         t.text  :game_intro

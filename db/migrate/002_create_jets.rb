@@ -1,4 +1,4 @@
-class CreateJets < ActiveRecord::Migration[6.0]
+class CreateJets < ActiveRecord::Migration[4.2]
     def change
       create_table :jets do |t|
         t.integer :user_id
