@@ -21,6 +21,5 @@ class Star
           ZOrder::STARS, 1, 1)#,# @color, :add)
     end
 
-    
   end
 

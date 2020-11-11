@@ -1,4 +1,5 @@
 class Player
+  attr_reader :x, :y, :angle, :radius
   attr_accessor :jet
     def initialize(jet)
       @jet = jet
@@ -49,10 +50,20 @@ class Player
         @score += 10
         @beep.play
         true
-      else
+       else
         false
-      end
-    end 
+       end
+      end 
       #collect stars will return nill if no stars were collected
     end
+
+
+    # def collision(bullets)
+    #   bullets.reject! do |bullet|
+    #  Gosu.distance(@x, @y, bullet.x, bullet.y) < 35 && @jet != bullet.jet 
+    #     @score -= 10
+    #   end
+    # end
+
+    
   end

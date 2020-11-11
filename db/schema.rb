@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "games", force: :cascade do |t|
     t.text "game_intro"
     t.integer "opener_id"
+    t.integer "high_scores"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

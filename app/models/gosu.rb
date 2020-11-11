@@ -3,8 +3,8 @@ require 'pry'
 
 class HeroesOfTheSky < Gosu::Window
    def initialize(jet1,jet2)
-    #@jet1 = jet1
-    #@jet2 = jet2
+    @jet1 = jet1
+    @jet2 = jet2
     super 640, 480
     self.caption = "Heroes Of The Sky"
 
@@ -18,6 +18,8 @@ class HeroesOfTheSky < Gosu::Window
     @star_anim = Gosu::Image.load_tiles("media/star.png", 25, 25)
     @stars = Array.new
     @font = Gosu::Font.new(20)
+
+    @bullets = []
   end
   
 
@@ -46,16 +48,15 @@ class HeroesOfTheSky < Gosu::Window
         @player_two.move
         something1 =  @player.collect_stars(@stars)
         something2 =  @player_two.collect_stars(@stars)
-      # puts
-      #  if !something1 
-      #    p @player.jet
-      #  else
-      #   puts "no stars collected. you lose. "
-      #  end
-       #binding.pry
+
+       # hit1 = @player.collision(@bullets)
+        #hit2 = @player_two.collision(@bullets)
+     
     if rand(100) < 4 and @stars.size < 25
       @stars.push(Star.new(@star_anim))
       end
+
+      @bullets.each { |bullet| bullet.move }
     end 
 
     def draw
@@ -65,17 +66,18 @@ class HeroesOfTheSky < Gosu::Window
         @stars.each { |star| star.draw }
         @font.draw_text("Player One Score: #{@player.score}",10,10,ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
         @font.draw_text("Player Two Score: #{@player_two.score}",10,50,ZOrder::UI, 1.0, 1.0, Gosu::Color::RED)
-    end
+        @bullets.each { |bullet| bullet.draw }
+      end
 
    
 
   def button_down(id)
-    if id == Gosu::KB_ESCAPE
-      close
-    else
-      super
-    end
-  end
+   if id == Gosu::KbSpace 
+    @bullets.push Bullet.new(@self, @player.x, @player.y, @player.angle, @jet1)
+   elsif id == Gosu::KB_Q
+    @bullets.push Bullet.new(@self, @player_two.x, @player_two.y, @player_two.angle, @jet2)
+   end
+  end 
 end
 
 # in the CLI when they're ready to start playing call this 
