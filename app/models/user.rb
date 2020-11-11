@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
     def self.login
         username = @@prompt.ask("Please enter your name:")
-        if self.find_by(username: username)
+        if  self.find_by(username: username)
+            system('clear')
             self.find_by(username: username).password_check
         else
             self.user_dne
@@ -13,11 +14,12 @@ class User < ActiveRecord::Base
     end
 
     def password_check
+        system('clear')
         password = @@prompt.mask("Please enter your password:")
         if self.password == password
             self
         else
-            puts "/nWe're sorry, that password is incorrect."
+            puts "We're sorry, that password is incorrect."
             sleep(2)
             CLI.title_screen 
         end
@@ -27,13 +29,16 @@ class User < ActiveRecord::Base
         username = @@prompt.ask("Enter your name:")
         password = @@prompt.mask("Enter a password:")
         confirm_password = @@prompt.mask("Confirm your password:")
+        
         if password != confirm_password
             puts "Passwords do not match. Re-enter your information."
+            system('clear')
             self.new_user
         else
             user_hold = self.create(username: username, password: password)
             CLI.username=(user_hold)
             puts "\n #{username} has been created."
+            system('clear')
             sleep(1)
         end 
         CLI.game_menu
@@ -46,6 +51,7 @@ class User < ActiveRecord::Base
             if user
                 # binding.pry
                 User.destroy(user.id)
+                system('clear')
                 puts "\nYou are destroyed."
                 sleep(2)
                 CLI.title_screen

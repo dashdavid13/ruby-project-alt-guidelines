@@ -36,10 +36,10 @@ class CLI
         end
         
         if selection == "Log In"
-            @@user = User.login
+            @@username = User.login
             self.game_menu
         elsif selection == "New User"
-            @@user = User.new_user
+            @@username = User.new_user
         elsif selection == "Delete User"
             User.delete_user
         end
@@ -51,37 +51,26 @@ class CLI
         self.game_header
         prompt = TTY::Prompt.new
         
-        selection = prompt.select("What action will you take?\n") do |option| #change prompt
-            option.choice "New game\n"
+        selection = prompt.select("What action will you take?\n") do |option| 
+            option.choice "New game"
             option.choice "High Scores"
-            
-        if selection == "New game\n"
-           self.welcome
-             #@@current_game = HeroesOfTheSky.new(jet1,jet2,user_id: @@username.id, game_complete: false).show
-                
-            elsif selection == "High Scores"
-                 Game.display_highscores
-                 # self.title_screen
-            end
         end
-
-      
-
+        if  selection == "New game"
+           self.welcome
+           system('clear')
+        elsif selection == "High Scores"
+            Jet.display_highscores
+        end
     end
 
-    
-
-
-    
+      
     def self.welcome 
-        
         jet1 = Jet.first
         jet2 = Jet.second
         HeroesOfTheSky.new(jet1,jet2).show
         system("clear")
         #SOMETHING TO INTRODUCE OUR GAME
         #puts @pastel.bold(@font.write("Heroes Of The Sky"))
-
     end
 end 
     
