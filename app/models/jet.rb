@@ -6,7 +6,7 @@ class Jet < ActiveRecord::Base
         top_scores = self.all.max_by(5) { |jet| jet.user_score }
         user_ids = top_scores.map { |jet| jet.user_id }
         players = user_ids.map { |id| User.find(id).username }
-        scores = top_scores.map { |jet| jet.user_scores}
+        scores = top_scores.map { |jet| jet.user_score}
         system('clear')
         puts "HIGH SCORES"
         i = 0
