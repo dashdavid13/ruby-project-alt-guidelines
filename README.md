@@ -1,4 +1,4 @@
-Instructions:
+# **Instructions:**
 
   1.  Fork and clone this repository.
   2.  ```cd``` into the cloned folder and open it in your text editor with ```code```
@@ -16,7 +16,7 @@ Instructions:
 
 
 
-  User Stories:
+ ## **User Stories:**
   1. As a user, I can create a username. 
   2. As a user, I can create/update a password.
   3. As a user, I can play with a friend.  
@@ -25,14 +25,14 @@ Instructions:
   6. As a user, I can delete my account. 
 
 
-  Application Specs:
+ ## **Application Specs:**
 
-  Text Editor - VSCODE 
+####  **Text Editor - VSCODE 
  
 
-Gems ```gem activerecord``` ```gem sinatra-activerecord```  ```gem sqlite3``` ```gem pry``` ```gem require_all``````gem faker``````gem rake``````gem tty-font``````gem tty-prompt``` ```gem pastel``` ```gem gosu```       
+###### **Gems** ```gem activerecord``` ```gem sinatra-activerecord```  ```gem sqlite3``` ```gem pry``` ```gem require_all``` ```gem faker``` ```gem rake``` ```gem tty-font``` ```gem tty-prompt``` ```gem pastel``` ```gem gosu```       
 
 
-Authors:
+**Authors:**
 
-Amelia Elton  &  David Medina 
+**Amelia Elton  &  David Medina**
