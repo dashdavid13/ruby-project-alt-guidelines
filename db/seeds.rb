@@ -11,5 +11,5 @@ laura = User.create(username: "laura", password: "laura")
 
 game = Game.create
 
-jet1 = Jet.create(user_id: amelia.id, game_id: game.id,  user_score: 0)
-jet2 = Jet.create(user_id: david.id, game_id: game.id,  user_score: 0)
+jet1 = Jet.create(user_id: amelia.id, user_score: 0)
+jet2 = Jet.create(user_id: david.id, user_score: 0)

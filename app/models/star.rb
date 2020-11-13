@@ -1,6 +1,6 @@
 module ZOrder
     BACKGROUND, STARS, PLAYER, UI = *0..3
-  end
+end
 
 class Star
     attr_reader :x, :y

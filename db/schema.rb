@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "jets", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "game_id"
     t.integer "user_score"
     t.datetime "created_at"
     t.datetime "updated_at"

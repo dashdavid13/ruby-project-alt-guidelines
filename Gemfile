@@ -13,5 +13,4 @@ gem "tty-font"
 gem "tty-prompt"
 gem "pastel"
 gem "gosu"
-gem "timers"
 

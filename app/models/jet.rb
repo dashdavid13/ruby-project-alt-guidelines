@@ -11,7 +11,7 @@ class Jet < ActiveRecord::Base
         puts "HIGH SCORES"
         i = 0
         while i < 5
-            puts "#{i + 1}. #{players[i]}: #{scores[i]}" #add player2 inside here?
+            puts "#{i + 1}. #{players[i]}: #{scores[i]}" 
             i += 1
         end
 
@@ -28,8 +28,5 @@ class Jet < ActiveRecord::Base
             CLI.title_screen
         end
     end
-
-
-
 
 end

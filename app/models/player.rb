@@ -1,6 +1,7 @@
 class Player
   attr_reader :x, :y, :angle, :radius
   attr_accessor :jet
+
     def initialize(jet)
       @jet = jet
       @image = Gosu::Image.new("media/starfighter.bmp")
@@ -67,9 +68,5 @@ class Player
         end
       end
     end
-  
 
-   
-
-    
   end
