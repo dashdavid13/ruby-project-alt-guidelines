@@ -27,7 +27,7 @@
 
  ## **Application Specs:**
 
-####  **Text Editor - VSCODE 
+####  **Text Editor - VSCODE** 
  
 
 ###### **Gems** ```gem activerecord``` ```gem sinatra-activerecord```  ```gem sqlite3``` ```gem pry``` ```gem require_all``` ```gem faker``` ```gem rake``` ```gem tty-font``` ```gem tty-prompt``` ```gem pastel``` ```gem gosu```       
