@@ -1,13 +1,13 @@
 require 'pry'
 require 'tty-prompt'
-require 'timers'
+##equire 'timers'
 
 
 class CLI
    
        @@prompt = TTY::Prompt.new
        @@pastel = Pastel.new
-       @@font = TTY::Font.new(:starwars)
+       @@font = TTY::Font.new(:doom)
        @@current_game = nil 
        @@username1 = nil
        @@username2 = nil
