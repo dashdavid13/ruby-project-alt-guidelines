@@ -25,6 +25,6 @@ SPEED = 5
 
     #def hit_player 
        # (@x > @at_player.x - 25) && (@x < @at_player.x + 25) &&  (@y > @at_player.y - 50) && (@y < @at_player.y)
-     #end   
+    #end   
 
 end

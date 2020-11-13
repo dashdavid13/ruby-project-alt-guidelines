@@ -1,3 +1,5 @@
+require 'pry'
+
 class User < ActiveRecord::Base
     has_many :jets
     has_many :games, through: :jets 
@@ -69,5 +71,7 @@ class User < ActiveRecord::Base
         sleep(2)
         CLI.title_screen    
     end 
+
+    
 
 end 
