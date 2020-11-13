@@ -20,7 +20,7 @@
 
  ## **User Stories:**
   1. As a user, I can create a username. 
-  2. As a user, I can create/update a password.
+  2. As a user, I can create a password.
   3. As a user, I can play with a friend.  
   4. As a user, I can view my score. 
   5. As a user, I can view high scores. 
