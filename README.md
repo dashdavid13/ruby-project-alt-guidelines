@@ -7,7 +7,9 @@
   5.  Two player game
   6.  Make sure to create both accounts before playing 
   7.  Player 1 is controlled with left, up and right arrow keys
-  8.  Player 2 is controlled with A, W and D keys
+  8.  Player 1 can shoot with the Space key
+  9.  Player 2 is controlled with A, W and D keys
+  10. Player 2 can shoot with the Q key
 
 
 
