@@ -15,7 +15,8 @@ class HeroesOfTheSky < Gosu::Window
     @player.warp(350, 240)
     @player_two.warp(320, 240)
     @laser = Gosu::Sample.new("media/Blaster.wav") 
-    
+    @song = Gosu::Song.new("media/theduel.mp3")
+    @song.play(true)
     @star_anim = Gosu::Image.load_tiles("media/star.png", 25, 25)
     @stars = Array.new
     @font = Gosu::Font.new(20)
