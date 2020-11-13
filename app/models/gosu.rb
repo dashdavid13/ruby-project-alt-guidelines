@@ -57,9 +57,9 @@ class HeroesOfTheSky < Gosu::Window
         @player_two.move
         something1 =  @player.collect_stars(@stars)
         something2 =  @player_two.collect_stars(@stars)
+        wow1 = @player.shoot_player(@bullets)
+        wow2 = @player_two.shoot_player(@bullets)
 
-       # hit1 = @player.collision(@bullets)
-        #hit2 = @player_two.collision(@bullets)
      
     if rand(100) < 4 and @stars.size < 25
       @stars.push(Star.new(@star_anim))
