@@ -27,24 +27,47 @@ class User < ActiveRecord::Base
         end
     end
 
-    def self.new_user 
-        username = @@prompt.ask("Enter your name:")
-        password = @@prompt.mask("Enter a password:")
-        confirm_password = @@prompt.mask("Confirm your password:")
+    # def self.new_user1 
+    #     username = @@prompt.ask("Enter your name:")
+    #     password = @@prompt.mask("Enter a password:")
+    #     confirm_password = @@prompt.mask("Confirm your password:")
         
-        if password != confirm_password
-            puts "Passwords do not match. Re-enter your information."
-            system('clear')
-            self.new_user
-        else
-            user_hold = self.create(username: username, password: password)
-            CLI.username=(user_hold)
-            puts "\n #{username} has been created."
-            system('clear')
-            sleep(1)
-        end 
-        CLI.game_menu
-    end
+    #     if password != confirm_password
+    #         puts "Passwords do not match. Re-enter your information."
+    #         system('clear')
+    #         self.new_user1
+    #     else
+    #         user_hold = self.create(username: username, password: password)
+    #         #self.find_by(username: username)
+    #         put self
+    #         CLI.username1 = self
+    #         puts "\n #{username} has been created."
+    #         system('clear')
+    #         sleep(1)
+    #         self
+    #     end 
+    # end
+
+    # def self.new_user2
+    #     username = @@prompt.ask("Enter your name:")
+    #     password = @@prompt.mask("Enter a password:")
+    #     confirm_password = @@prompt.mask("Confirm your password:")
+        
+    #     if password != confirm_password
+    #         puts "Passwords do not match. Re-enter your information."
+    #         system('clear')
+    #         self.new_user2
+    #     else
+    #         user_hold = self.create(username: username, password: password)
+    #         #self.find_by(username: username)
+    #         CLI.username2 = self
+    #         puts "\n #{username} has been created."
+    #         system('clear')
+    #         sleep(1)
+    #         self
+    #     end 
+    
+    # end
 
     def self.delete_user
         username = @@prompt.ask("Which user do you want to delete?")

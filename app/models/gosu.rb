@@ -42,17 +42,29 @@ class HeroesOfTheSky < Gosu::Window
     end
     if Gosu.button_down? Gosu::KB_RIGHT or Gosu::button_down? Gosu::GP_RIGHT
       @player.turn_right
+<<<<<<< HEAD
     end 
+=======
+    end
+>>>>>>> 17f71ac49fcb48541060698bac380c0b16842b32
     if Gosu.button_down? Gosu::KB_D or Gosu::button_down? Gosu::GP_RIGHT
        @player_two.turn_right
     end
     if Gosu.button_down? Gosu::KB_UP or Gosu::button_down? Gosu::GP_BUTTON_0
        @player.accelerate
+<<<<<<< HEAD
     end
     if Gosu.button_down? Gosu::KB_W or Gosu::button_down? Gosu::GP_BUTTON_0
        @player_two.accelerate
     end
    
+=======
+    end 
+    if Gosu.button_down? Gosu::KB_W or Gosu::button_down? Gosu::GP_BUTTON_0
+       @player_two.accelerate
+    end
+
+>>>>>>> 17f71ac49fcb48541060698bac380c0b16842b32
         @player.move
         @player_two.move
         something1 =  @player.collect_stars(@stars)
@@ -115,14 +127,29 @@ class HeroesOfTheSky < Gosu::Window
     
 
   def button_down(id)
-   if id == Gosu::KbSpace 
+    if id == Gosu::KbSpace 
     @bullets.push Bullet.new(@self, @player.x, @player.y, @player.angle, @jet1)
+<<<<<<< HEAD
     @laser.play
    elsif id == Gosu::KB_Q
     @bullets.push Bullet.new(@self, @player_two.x, @player_two.y, @player_two.angle, @jet2)
     @laser.play
+=======
+>>>>>>> 17f71ac49fcb48541060698bac380c0b16842b32
    end
+   if id == Gosu::KB_Q
+    @bullets.push Bullet.new(@self, @player_two.x, @player_two.y, @player_two.angle, @jet2)
+   end 
+   if id == Gosu::KB_ESCAPE 
+     @jet1.user_score = @player.score
+     @jet2.user_score = @player_two.score
+
+     close
+   else
+    super
+   end 
   end 
+
 end
 
 # in the CLI when they're ready to start playing call this 
