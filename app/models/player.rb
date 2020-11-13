@@ -57,7 +57,16 @@ class Player
       #collect stars will return nill if no stars were collected
     end
 
-    
+    def shoot_player(bullets)
+      bullets.reject! do |bullet|
+        if Gosu.distance(@x, @y, bullet.x, bullet.y) < 35 && bullet.jet != self.jet 
+          @score -= 10
+          true
+        else
+          false 
+        end
+      end
+    end
   
 
    
