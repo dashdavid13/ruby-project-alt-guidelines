@@ -1,4 +1,5 @@
 Instructions:
+
   1.  Fork and clone this repository.
   2.  ```cd``` into the cloned folder and open it in your text editor with ```code```
   3.  Open your terminal and run bundle install
@@ -24,10 +25,10 @@ Instructions:
   6. As a user, I can delete my account. 
 
 
-Application Specs:
+  Application Specs:
 
-Text Editor
-  VSCODE
+  Text Editor - VSCODE 
+ 
 
 Gems ```gem activerecord``` ```gem sinatra-activerecord```  ```gem sqlite3``` ```gem pry``` ```gem require_all``````gem faker``````gem rake``````gem tty-font``````gem tty-prompt``` ```gem pastel``` ```gem gosu```       
 
